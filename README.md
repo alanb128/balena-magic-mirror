@@ -1,5 +1,5 @@
 # balena-magic-mirror
-Simple balena implementation of MagicMirror.
+Simple balena implementation of MagicMirror on a Raspberry Pi 3.
 
 Using balena makes MagicMirror super easy to set up and use when your Pi is less accessible/mounted behind a mirror:
 - A captive portal for setting/resetting WiFi credentials via another device
@@ -14,7 +14,7 @@ Create a [free balenaCloud account](https://dashboard.balena-cloud.com/signup?) 
 Initially the display may be distorted because the GPU memory default is too low. In your "Device Configuration" tab in the balenaCloud dashboard, click "activate" for "Define device GPU memory in megabytes." and add the value 192 (or higher). The device will reboot and the display should correct itself.
 
 ## Configuration
-At startup there will be no config do MM will display its startup message. You can enable the sample config by going to the balenaCloud terminal, selecting the magicmirror container, and initiating an ssh connection. Then type the following to enable the sample config file:
+At startup there will be no config so MM will display its generic startup message. You can enable the sample config by going to the balenaCloud terminal, selecting the magicmirror container, and initiating an ssh connection. Then type the following to enable the sample config file:
 ```
 cd config
 cp config.js.sample config.js
@@ -29,4 +29,11 @@ Power users will want to use the above method to change the contents of the conf
 - `/opt/magic_mirror/config`
 - `/opt/magic_mirror/modules`
 - `/opt/magic_mirror/css`
+
+## How it works
+This project uses the server-only image of MagicMirror located [here](https://hub.docker.com/r/bastilimbach/docker-magicmirror/) and then installs the Nano text editor on top of it. This makes the MagicMirror content available on http://localhost:8080
+
+We then use the balena [browser block](https://github.com/balenablocks/browser) to display the content being served by MagicMirror. See the link for more options you can adjust on the browser block.
+
+The [WiFi Connect](https://github.com/balenablocks/wifi-connect) block provides a utility for dynamically setting the WiFi configuration on a the device via a captive portal. See the link for more options regarding WiFi Connect.
 
