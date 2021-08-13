@@ -1,0 +1,22 @@
+version: '2'
+volumes:
+    mm-config:
+    mm-modules:
+    mm-css:
+services:
+  magicmirror:
+    image: bastilimbach/docker-magicmirror:v2.15.0
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - mm-config:/opt/magic_mirror/config
+      - mm-modules:/opt/magic_mirror/modules
+      - mm-css:/opt/magic_mirror/css
+  browser:
+    image: balenablocks/browser
+    privileged: true # required for UDEV to find plugged in peripherals such as a USB mouse
+    network_mode: host
+    environment:
+      LAUNCH_URL: 'http://localhost:8080'
+      KIOSK: '1'
+ 
