@@ -4,8 +4,8 @@ Simple balena implementation of MagicMirror on a Raspberry Pi 3.
 Using balena makes MagicMirror (MM) super easy to set up and use when your Pi is less accessible/mounted behind a mirror:
 - A captive portal for setting/resetting WiFi credentials via another device
 - Remotely update the OS and MM application
-- Easy remote ssh
-- balenaCloud control of the device and environment variables
+- Easily deploy and maintain a fleet of MagicMirrors
+- balenaCloud control of the device and environment variables, ssh access
 
 ## Getting Started
 Create a [free balenaCloud account](https://dashboard.balena-cloud.com/signup?) and the use the deploy button below to create a new MagicMirror application. Then add a new device (make sure to select "WiFi + Ethernet" if you want your mirror to use WiFi), burn the SD card with [Etcher](https://www.balena.io/etcher/), insert in your Raspberry Pi and apply power. Make sure a display of some sort is connected to your device's HDMI port.
