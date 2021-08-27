@@ -1,7 +1,7 @@
 # balena-magic-mirror
 Simple balena implementation of [MagicMirror](https://magicmirror.builders/) on a Raspberry Pi 3.
 
-Using balena makes MagicMirror (MM) super easy to set up and use when your Pi is less accessible/mounted behind a mirror:
+Using [balena](https://www.balena.io/) makes MagicMirror (MM) super easy to set up and maintain when your Pi is less accessible/mounted behind a mirror:
 - A captive portal for setting/resetting WiFi credentials via another device
 - Remotely update the OS and MM application
 - Easily deploy and maintain a fleet of MagicMirrors
