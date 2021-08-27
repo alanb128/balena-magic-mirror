@@ -26,7 +26,7 @@ Once the ssh reconnects, refresh the browser to view the new changes by typing:
 curl -X POST http://localhost:5011/refresh
 ```
 
-Power users will want to use the above method to change the contents of the config file to suit one's taste. The Nano text editor has been installed to ease that process somewhat. (The web terminal also supports copy and paste via the left click menu.) The following folders in MagicMirror are persisted between container restarts, so any changes should be maintained:
+Power users will want to use the above method to change the contents of the config file to suit one's taste. The Nano text editor has been installed to ease that process somewhat. (The web terminal also supports copy and paste via the right click menu.) The following folders in MagicMirror are persisted between container restarts, so any changes should be maintained:
 - `/opt/magic_mirror/config`
 - `/opt/magic_mirror/modules`
 - `/opt/magic_mirror/css`
